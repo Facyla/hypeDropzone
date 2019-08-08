@@ -27,11 +27,10 @@ class DropzoneService {
 			'origin' => get_input('origin', 'dropzone'),
 		]);
 
-		$output = array();
+		$output = [];
 
 		foreach ($uploads as $upload) {
-
-			$messages = array();
+			$messages = [];
 			$success = true;
 
 			if ($upload->error) {
@@ -41,22 +40,22 @@ class DropzoneService {
 			} else {
 				$file = $upload->file;
 				$guid = $file->guid;
-				$html = elgg_view('input/hidden', array(
+				$html = elgg_view('input/hidden', [
 					'name' => get_input('input_name', 'guids[]'),
 					'value' => $file->guid,
-				));
+				]);
 			}
 
-			$file_output = array(
+			$file_output = [
 				'messages' => $messages,
 				'success' => $success,
 				'guid' => $guid,
 				'html' => $html,
-			);
+			];
 
-			$output[] = elgg_trigger_plugin_hook('upload:after', 'dropzone', array(
+			$output[] = elgg_trigger_plugin_hook('upload:after', 'dropzone', [
 				'upload' => $upload,
-			), $file_output);
+			], $file_output);
 		}
 
 		return $output;

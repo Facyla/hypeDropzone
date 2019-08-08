@@ -73,7 +73,7 @@ if (isset($vars['subtype'])) {
 
 $options['data-clickable'] = "#{$options['id']} .elgg-dropzone-fallback-control,#{$options['id']} .elgg-dropzone-instructions";
 
-$language = array(
+$language = [
 	'data-dict-default-message' => elgg_echo('dropzone:default_message'),
 	'data-dict-fallback-message' => elgg_echo('dropzone:fallback_message'),
 	'data-dict-fallback-text' => elgg_echo('dropzone:fallback_text'),
@@ -84,7 +84,7 @@ $language = array(
 	'data-dict-cancel-upload-confirmation' => elgg_echo('dropzone:cancel_upload_confirmation'),
 	'data-dict-remove-file' => elgg_echo('dropzone:remove_file'),
 	'data-dict-max-files-exceeded' => elgg_echo('dropzone:max_files_exceeded')
-);
+];
 
 $options = array_merge($language, $options);
 
@@ -93,10 +93,10 @@ $dropzone_attributes = elgg_format_attributes($options);
 <div class="elgg-dropzone">
 	<?=
 	// Add a hidden field to use in the action hook to unserialize the values
-	elgg_view('input/hidden', array(
+	elgg_view('input/hidden', [
 		'name' => 'dropzone_fields[]',
 		'value' => $vars['name']
-	));
+	]);
 	?>
 	<div <?= $dropzone_attributes ?>>
 		<span class="elgg-dropzone-instructions dz-default dz-message">

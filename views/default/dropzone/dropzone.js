@@ -68,7 +68,7 @@ define(function (require) {
 					} else {
 						this.on('processing', dz.process);
 					}
-					this.on('addedfile', dz.backuprequired); 
+					this.on('addedfile', dz.backuprequired);
 					this.on('removedfile', dz.removedfile);
 					this.on('removedfile', dz.restorerequired);
 				}
