@@ -1,7 +1,6 @@
 <?php
 
-$english = array(
-
+return [
 	'dropzone:response_error' => 'An unknown error has occurred',
 	'dropzone:default_message' => '<strong>Drop your files here</strong><br /><span>or click to select them from your computer</span>',
 	'dropzone:remove_file' => 'Remove',
@@ -14,7 +13,4 @@ $english = array(
 	'dropzone:cancel_upload_confirmation' => 'Are you sure you want to cancel the upload?',
 	'dropzone:server_side_error' => 'Server Error',
 	'dropzone:file_not_entity' => 'File entity could not be created',
-	
-);
-
-add_translation('en', $english);
+];
