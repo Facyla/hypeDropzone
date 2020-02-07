@@ -13,7 +13,7 @@ class DropzoneService {
 	 * @return array
 	 */
 	public function handleUploads() {
-		
+
 		$subtype = get_input('subtype');
 		if (!$subtype) {
 			$subtype = elgg_get_plugin_setting('default_upload_subtype', 'hypeDropzone', 'file');

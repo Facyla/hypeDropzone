@@ -156,7 +156,7 @@ define(function (require) {
 			$('.elgg-dropzone').hide();
 			$('input[data-dropzone-fallback]').removeClass('hidden');
 		},
-		
+
 		process: function() {
 			$('form').find('[type="submit"]').addClass('elgg-state-disabled').prop('disabled', true);
 		},
@@ -196,7 +196,7 @@ define(function (require) {
 				elgg.trigger_hook('upload:success', 'dropzone', {file: file, data: data});
 			});
 		},
-		
+
 		complete: function() {
 			$('form').find('[type="submit"]').removeClass('elgg-state-disabled').prop('disabled', false);
 		},
@@ -226,7 +226,7 @@ define(function (require) {
 			if (!$input.prop('required')) {
 				return;
 			}
-			
+
 			$input.data('wasRequired', true);
 			$input.prop('required', false);
 			$input.get(0).setCustomValidity('');
@@ -239,11 +239,11 @@ define(function (require) {
 			if (!$input.data('wasRequired')) {
 				return;
 			}
-			
+
 			if (this.files.length) {
 				return;
 			}
-						
+
 			$input.prop('required', true);
 		}
 	};
