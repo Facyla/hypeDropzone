@@ -88,7 +88,6 @@ $language = [
 
 $options = array_merge($language, $options);
 
-$dropzone_attributes = elgg_format_attributes($options);
 ?>
 <div class="elgg-dropzone">
 	<?=
@@ -98,7 +97,7 @@ $dropzone_attributes = elgg_format_attributes($options);
 		'value' => $vars['name']
 	]);
 	?>
-	<div <?= $dropzone_attributes ?>>
+	<div <?= http_build_query($options,'',' ') ?>>
 		<span class="elgg-dropzone-instructions dz-default dz-message">
 			<?= elgg_view_icon('cloud-upload') ?>
 			<?= $language['data-dict-default-message'] ?>
